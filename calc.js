@@ -1,8 +1,8 @@
 var keys = document.querySelectorAll('#calculator span');
-var operators = ['+', '-', 'x', '/'];
+var operators = ['+', '-', 'x', '/', 'X', '*'];
 document.addEventListener("keypress", keyCalc, false);
 function keyCalc(e){
-	var allow = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', 'c', 'C', 'x','X', '*', '.'];
+	var allow = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', 'c', 'C', '.'];
 	var keyCode = e.which || e.keyCode;
 	var keyVal = String.fromCharCode(keyCode);
 	if(allow.indexOf(keyVal)==-1 && operators.indexOf(keyVal)==-1){
