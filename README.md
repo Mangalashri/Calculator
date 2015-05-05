@@ -1,7 +1,7 @@
 # Calculator
-A simple calculator using Javascript and CSS
+A simple calculator using Javascript and CSS.
 The calculator can be operated using keyboard and by pressing the buttons.
-Keys and their corresponding operations
+Keys and their corresponding operations:
 * +	Add
 * -	Subtract
 * * x X	Multiply
