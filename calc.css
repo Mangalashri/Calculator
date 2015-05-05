@@ -18,7 +18,7 @@ h1 {
 html {
 	height: 100%;
 	background: white;
-	background: radial-gradient(circle, #fff 35%, #aaa);
+	background: radial-gradient(circle, #fff 20%, #aaa);
 	background-size: cover;
 }
 
