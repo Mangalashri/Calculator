@@ -1,5 +1,6 @@
 var keys = document.querySelectorAll('#calculator span');
 var operators = ['+', '-', 'x', '/', 'X', '*'];
+var dec = false;
 document.addEventListener("keypress", keyCalc, false);
 function keyCalc(e){
 	var allow = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', 'c', 'C', '.'];
@@ -29,6 +30,7 @@ function calc(val)
 	}
 	if(val == 'C' || val == 'c') {
 		input.innerHTML = '';
+		dec = false;
 	}
 	else if(val == '=') {
 		var equation = inputVal;
@@ -41,6 +43,7 @@ function calc(val)
 		{
 			input.innerHTML = eval(equation);
 		}
+		dec = false;
 	}
 	else if(operators.indexOf(val) > -1) {
 		var lastChar = inputVal[inputVal.length - 1];
@@ -51,14 +54,15 @@ function calc(val)
 		if(operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
 			input.innerHTML = inputVal.replace(/.$/, val);
 		}
+		dec = false;
 	}
 	else if(val == '.') {
-		if(inputVal.indexOf(".")!=-1) {
-			alert("Invalid number");
+		if(!dec) {
+				input.innerHTML += val;
+				dec = true;
 		}
-		else{
-			input.innerHTML += val;
-		}
+		else
+			alert("Invalid no");
 	}
 	else {
 		var l1 = inputVal.length;
